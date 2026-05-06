@@ -5,108 +5,338 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Nikhil P | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
 <style>
-/* ✅ YOUR ORIGINAL CSS (UNCHANGED CORE STYLE) */
+:root {
+  --bg:#0a0a0a;
+  --surface:#111;
+  --surface2:#1a1a1a;
+  --border:#2a2a2a;
+  --accent:#e8d5a3;
+  --accent2:#c9a84c;
+  --text:#f0ebe0;
+  --muted:#7a7570;
+}
+
 body {
-  background: #0a0a0a;
-  color: #f0ebe0;
-  font-family: 'DM Sans', sans-serif;
-  margin: 0;
+  margin:0;
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  background:#0a0a0ad9;
+  border-bottom:1px solid var(--border);
+}
+
+.nav-logo {
+  font-family:'Bebas Neue';
+  color:var(--accent);
+  font-size:22px;
+}
+
+/* HERO */
+#hero {
+  padding:120px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.hero-name {
+  font-family:'Bebas Neue';
+  font-size:90px;
+}
+.hero-name span { color:var(--accent); }
+
+.hero-role {
+  font-family:'DM Serif Display';
+  color:var(--muted);
+  font-size:22px;
+}
+
+.hero-bio {
+  max-width:500px;
+  line-height:1.8;
+}
+
+/* SECTION */
 section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
+  max-width:1100px;
+  margin:auto;
+  padding:80px 40px;
 }
 
-h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 80px;
+.section-title {
+  font-family:'Bebas Neue';
+  font-size:50px;
 }
 
-h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
-  margin-bottom: 10px;
+.section-label {
+  font-size:12px;
+  letter-spacing:3px;
+  color:var(--accent2);
 }
 
-a {
-  color: #e8d5a3;
-  text-decoration: none;
+.divider {
+  width:60px;
+  height:2px;
+  background:var(--accent);
+  margin:20px 0;
 }
 
-.project {
-  border: 1px solid #2a2a2a;
-  padding: 20px;
-  margin-top: 20px;
+/* ABOUT */
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6rem;
+  align-items:center;
+}
+
+.about-image-wrap {
+  position:relative;
+}
+
+.about-image {
+  width:100%;
+  aspect-ratio:3/4;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+
+.about-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.about-frame {
+  position:absolute;
+  bottom:-16px;
+  right:-16px;
+  width:100%;
+  height:100%;
+  border:1px solid var(--border);
+}
+
+.about-stats {
+  display:flex;
+  gap:2rem;
+  margin-top:20px;
+}
+
+.stat-num {
+  font-family:'Bebas Neue';
+  font-size:30px;
+  color:var(--accent);
+}
+
+.stat-label {
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* SKILLS */
+.skills-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:1px;
+  background:var(--border);
+}
+
+.skill-card {
+  background:var(--surface);
+  padding:20px;
+  font-size:14px;
+}
+
+.skill-bar {
+  height:2px;
+  background:var(--border);
+  margin-top:8px;
+}
+
+.skill-fill {
+  height:100%;
+  background:var(--accent);
+}
+
+/* PROJECTS */
+.projects-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+}
+
+.project-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:25px;
+}
+
+.project-card:hover {
+  border-color:var(--accent);
+}
+
+.project-link {
+  color:var(--accent);
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* CONTACT */
+.contact-item {
+  background:var(--surface);
+  padding:15px;
+  border:1px solid var(--border);
+  margin-bottom:10px;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <div class="nav-logo">NIKHIL</div>
+</nav>
+
 <!-- HERO -->
-<section>
-  <h1>NIKHIL <span style="color:#e8d5a3;">P</span></h1>
-  <p><i>Aspiring Cloud & DevOps Engineer</i></p>
-  <p>
-    Passionate about building scalable cloud solutions using AWS, Kubernetes, and serverless architectures.
+<section id="hero">
+  <div class="hero-name">NIKHIL <span>P</span></div>
+  <div class="hero-role">Cloud & DevOps Engineer</div>
+  <p class="hero-bio">
+    Passionate about building scalable cloud applications using AWS, Kubernetes, and serverless technologies.
   </p>
 </section>
 
 <!-- ABOUT -->
-<section>
-  <h2>ABOUT</h2>
-  <p>
-   Aspiring Cloud and DevOps Engineer with hands-on experience in AWS, Docker, Kubernetes (EKS), and serverless architectures. Skilled in building and deploying scalable applications with CI/CD practices and cloud-native tools. Seeking to contribute to modern infrastructure automation and cloud-based solutions.
-  </p>
+<section id="about">
+  <div class="about-grid">
+
+    <div class="about-image-wrap">
+      <div class="about-image">
+        <img src="images/profile.jpg" alt="Nikhil">
+      </div>
+      <div class="about-frame"></div>
+    </div>
+
+    <div>
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">WHO I <span>AM</span></h2>
+      <div class="divider"></div>
+
+      <p>
+        Aspiring Cloud and DevOps Engineer with hands-on experience in AWS, Docker, Kubernetes (EKS), and serverless architectures. Skilled in building and deploying scalable applications with CI/CD practices and cloud-native tools. Seeking to contribute to modern infrastructure automation and cloud-based solutions.
+
+
+      <p>
+        Skilled in Kubernetes, CI/CD pipelines, and building scalable cloud-native applications.
+      </p>
+
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div>
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Learning</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- SKILLS -->
 <section>
-  <h2>SKILLS</h2>
-  <p>Cloud: AWS (Lambda, S3, RDS, EKS, API Gateway, IAM, CloudWatch)
-DevOps Tools: Docker, Kubernetes, Argo CD, CI/CD
-Networking: TCP/IP, DNS
-Programming: Python, C
-Other: Git, Linux, Embedded Systems, IoT
-</p>
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title">MY <span>SKILLS</span></h2>
+  <div class="divider"></div>
+
+  <div class="skills-grid">
+
+    <div class="skill-card">Lambda<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+    <div class="skill-card">S3<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+    <div class="skill-card">RDS<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    <div class="skill-card">EKS<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    <div class="skill-card">API Gateway<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    <div class="skill-card">IAM<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    <div class="skill-card">CloudWatch<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+
+    <div class="skill-card">Docker<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+    <div class="skill-card">Kubernetes<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    <div class="skill-card">Argo CD<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    <div class="skill-card">CI/CD<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+
+    <div class="skill-card">TCP/IP<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    <div class="skill-card">DNS<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    <div class="skill-card">DHCP<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+    <div class="skill-card">Routing Protocols<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+
+    <div class="skill-card">Python<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    <div class="skill-card">C<div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+    <div class="skill-card">Git<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    <div class="skill-card">Linux<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+    <div class="skill-card">Embedded Systems<div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section>
-  <h2>PROJECTS</h2>
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">PROJECTS</h2>
+  <div class="divider"></div>
 
-  <div class="project">
-    <h3>Text-to-Audio Web Application</h3>
-    <p>
-      Built a serverless application using AWS Lambda and S3 to convert text into speech with real-time processing.
-    </p>
-    <a href="https://github.com/Nikhil3535/text-to-audio-fullstack" target="_blank">
-      View Project →
-    </a>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>Text-to-Audio Application</h3>
+      <p>Developed a Text-to-Audio application that converts user input text into speech using backend processing logic.
+Built and deployed backend functionality using AWS Lambda, enabling scalable serverless execution.
+Hosted frontend on Amazon S3 for a lightweight and cost-effective static web interface.
+Designed API interactions for real-time text input and audio response handling.
+Implemented efficient audio output handling for playback and improved accessibility.
+</p>
+      <a href="https://github.com/Nikhil3535/text-to-audio-fullstack" target="_blank" class="project-link">VIEW →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Employee Management System</h3>
+      <p>Developed a full-stack Employee Management System with complete CRUD functionality.
+Designed and implemented RESTful APIs integrated with a database for reliable data management.
+Containerized the application using Docker and deployed on AWS EKS with RDS for scalability.
+Implemented CI/CD pipeline enabling automated deployments and consistent environment management.
+
+</p>
+      <a href="https://github.com/Nikhil3535/EM-app" target="_blank" class="project-link">VIEW →</a>
+    </div>
+
   </div>
-
-  <div class="project">
-    <h3>Employee Management System</h3>
-    <p>
-      Developed a full-stack application deployed on AWS EKS using Docker and CI/CD pipeline with scalable backend.
-    </p>
-    <a href="https://github.com/Nikhil3535/EM-app" target="_blank">
-      View Project →
-    </a>
-  </div>
-
 </section>
 
 <!-- CONTACT -->
 <section>
-  <h2>CONTACT</h2>
-  <p>Email: nikhilhntr@gmail.com</p>
-  <p>Location: Bangalore, India</p>
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">GET IN TOUCH</h2>
+  <div class="divider"></div>
+
+  <div class="contact-item">Email: nikhilhntr@gmail.com</div>
+  <div class="contact-item">Location: Bangalore, India</div>
 </section>
 
 </body>
