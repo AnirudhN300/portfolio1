@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Nikhil P | Portfolio</title>
 
@@ -9,196 +9,314 @@
 
 <style>
 :root {
-  --bg:#0a0a0a;
-  --surface:#111;
-  --surface2:#1a1a1a;
-  --border:#2a2a2a;
-  --accent:#e8d5a3;
-  --accent2:#c9a84c;
-  --text:#f0ebe0;
-  --muted:#7a7570;
+  --bg: #0b0f14;
+  --surface: #121821;
+  --surface2: #1b2430;
+  --border: #2b3545;
+  --accent: #64ffda;
+  --accent2: #8892b0;
+  --text: #e6edf3;
+  --muted: #94a3b8;
+  --shadow: rgba(0,0,0,0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin:0;
-  font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(to bottom, #0b0f14, #111827);
+  color: var(--text);
+  line-height: 1.7;
 }
 
-/* NAV */
 nav {
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-  background:#0a0a0ad9;
-  border-bottom:1px solid var(--border);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
-  font-family:'Bebas Neue';
-  color:var(--accent);
-  font-size:22px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--accent);
+  font-size: 28px;
+  letter-spacing: 2px;
 }
 
-/* HERO */
 #hero {
-  padding:120px 40px;
-  max-width:1100px;
-  margin:auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 60px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .hero-name {
-  font-family:'Bebas Neue';
-  font-size:90px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 110px;
+  line-height: 1;
+  letter-spacing: 3px;
 }
-.hero-name span { color:var(--accent); }
+
+.hero-name span {
+  color: var(--accent);
+}
 
 .hero-role {
-  font-family:'DM Serif Display';
-  color:var(--muted);
-  font-size:22px;
+  font-family: 'DM Serif Display', serif;
+  color: var(--accent2);
+  font-size: 28px;
+  margin-top: 10px;
 }
 
 .hero-bio {
-  max-width:500px;
-  line-height:1.8;
+  max-width: 650px;
+  margin-top: 25px;
+  font-size: 17px;
+  color: var(--muted);
 }
 
-/* SECTION */
 section {
-  max-width:1100px;
-  margin:auto;
-  padding:80px 40px;
-}
-
-.section-title {
-  font-family:'Bebas Neue';
-  font-size:50px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 60px;
 }
 
 .section-label {
-  font-size:12px;
-  letter-spacing:3px;
-  color:var(--accent2);
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.section-title span {
+  color: var(--accent);
 }
 
 .divider {
-  width:60px;
-  height:2px;
-  background:var(--accent);
-  margin:20px 0;
+  width: 70px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 10px;
+  margin-bottom: 40px;
 }
 
-/* ABOUT */
 .about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:6rem;
-  align-items:center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
 .about-image-wrap {
-  position:relative;
+  position: relative;
 }
 
 .about-image {
-  width:100%;
-  aspect-ratio:3/4;
-  background:var(--surface2);
-  border:1px solid var(--border);
-  overflow:hidden;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 10px 40px var(--shadow);
 }
 
 .about-image img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-frame {
-  position:absolute;
-  bottom:-16px;
-  right:-16px;
-  width:100%;
-  height:100%;
-  border:1px solid var(--border);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.about-grid p {
+  color: var(--muted);
+  margin-bottom: 20px;
 }
 
 .about-stats {
-  display:flex;
-  gap:2rem;
-  margin-top:20px;
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .stat-num {
-  font-family:'Bebas Neue';
-  font-size:30px;
-  color:var(--accent);
+  font-family: 'Bebas Neue';
+  font-size: 42px;
+  color: var(--accent);
 }
 
 .stat-label {
-  font-size:12px;
-  color:var(--muted);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 1px;
 }
 
-/* SKILLS */
 .skills-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-  gap:1px;
-  background:var(--border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .skill-card {
-  background:var(--surface);
-  padding:20px;
-  font-size:14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px var(--shadow);
 }
 
-.skill-bar {
-  height:2px;
-  background:var(--border);
-  margin-top:8px;
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
 }
 
-.skill-fill {
-  height:100%;
-  background:var(--accent);
+.skill-card img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
-/* PROJECTS */
+.skill-card span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+
 .projects-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px var(--shadow);
 }
 
 .project-card:hover {
-  border-color:var(--accent);
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.project-card h3 {
+  margin-bottom: 18px;
+  font-size: 24px;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 25px;
 }
 
 .project-link {
-  color:var(--accent);
-  font-size:12px;
-  letter-spacing:2px;
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-/* CONTACT */
+.project-link:hover {
+  opacity: 0.8;
+}
+
 .contact-item {
-  background:var(--surface);
-  padding:15px;
-  border:1px solid var(--border);
-  margin-bottom:10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  transition: 0.3s ease;
+}
+
+.contact-item:hover {
+  border-color: var(--accent);
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+@media(max-width: 900px) {
+
+  nav {
+    padding: 20px 25px;
+  }
+
+  section,
+  #hero {
+    padding: 90px 25px;
+  }
+
+  .hero-name {
+    font-size: 72px;
+  }
+
+  .hero-role {
+    font-size: 22px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+  }
 }
 </style>
 </head>
@@ -209,7 +327,6 @@ section {
   <div class="nav-logo">NIKHIL</div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-name">NIKHIL <span>P</span></div>
   <div class="hero-role">Cloud & DevOps Engineer</div>
@@ -218,13 +335,12 @@ section {
   </p>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
 
     <div class="about-image-wrap">
       <div class="about-image">
-        <img src="images/profile.jpg" alt="Nikhil">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Nikhil">
       </div>
       <div class="about-frame"></div>
     </div>
@@ -235,8 +351,8 @@ section {
       <div class="divider"></div>
 
       <p>
-        Aspiring Cloud and DevOps Engineer with hands-on experience in AWS, Docker, Kubernetes (EKS), and serverless architectures. Skilled in building and deploying scalable applications with CI/CD practices and cloud-native tools. Seeking to contribute to modern infrastructure automation and cloud-based solutions.
-
+        Aspiring Cloud and DevOps Engineer with hands-on experience in AWS, Docker, Kubernetes (EKS), and serverless architectures.
+      </p>
 
       <p>
         Skilled in Kubernetes, CI/CD pipelines, and building scalable cloud-native applications.
@@ -261,7 +377,6 @@ section {
   </div>
 </section>
 
-<!-- SKILLS -->
 <section>
   <div class="section-label">What I Do</div>
   <h2 class="section-title">MY <span>SKILLS</span></h2>
@@ -269,34 +384,74 @@ section {
 
   <div class="skills-grid">
 
-    <div class="skill-card">Lambda<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-card">S3<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-card">RDS<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-card">EKS<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-card">API Gateway<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-card">IAM<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-card">CloudWatch<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-
-    <div class="skill-card">Docker<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-card">Kubernetes<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-card">Argo CD<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-card">CI/CD<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-
-    <div class="skill-card">TCP/IP<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-card">DNS<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-card">DHCP<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
-    <div class="skill-card">Routing Protocols<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
-
-    <div class="skill-card">Python<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-card">C<div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
-    <div class="skill-card">Git<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-card">Linux<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-card">Embedded Systems<div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
-
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+    <span>AWS Lambda</span>
   </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+    <span>Docker</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+    <span>Kubernetes</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="EKS">
+    <span>EKS</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://img.icons8.com/color/96/000000/api-settings.png" alt="API Gateway">
+    <span>API Gateway</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://img.icons8.com/color/96/identity-and-access-management.png" alt="IAM">
+    <span>IAM</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://img.icons8.com/color/96/cloud.png" alt="CloudWatch">
+    <span>CloudWatch</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="CI/CD">
+    <span>CI/CD</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://img.icons8.com/color/96/networking-manager.png" alt="TCP/IP">
+    <span>TCP/IP</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+    <span>Python</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+    <span>C</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+    <span>Git</span>
+  </div>
+
+  <div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+    <span>Linux</span>
+  </div>
+
+</div>
 </section>
 
-<!-- PROJECTS -->
 <section>
   <div class="section-label">Portfolio</div>
   <h2 class="section-title">PROJECTS</h2>
@@ -306,30 +461,23 @@ section {
 
     <div class="project-card">
       <h3>Text-to-Audio Application</h3>
-      <p>Developed a Text-to-Audio application that converts user input text into speech using backend processing logic.
-Built and deployed backend functionality using AWS Lambda, enabling scalable serverless execution.
-Hosted frontend on Amazon S3 for a lightweight and cost-effective static web interface.
-Designed API interactions for real-time text input and audio response handling.
-Implemented efficient audio output handling for playback and improved accessibility.
-</p>
+      <p>
+        Developed a serverless text-to-audio application using AWS Lambda, S3, and API integrations for scalable cloud deployment.
+      </p>
       <a href="https://github.com/Nikhil3535/text-to-audio-fullstack" target="_blank" class="project-link">VIEW →</a>
     </div>
 
     <div class="project-card">
       <h3>Employee Management System</h3>
-      <p>Developed a full-stack Employee Management System with complete CRUD functionality.
-Designed and implemented RESTful APIs integrated with a database for reliable data management.
-Containerized the application using Docker and deployed on AWS EKS with RDS for scalability.
-Implemented CI/CD pipeline enabling automated deployments and consistent environment management.
-
-</p>
+      <p>
+        Built a cloud-native employee management application with Docker, Kubernetes, AWS EKS, RDS, and CI/CD automation.
+      </p>
       <a href="https://github.com/Nikhil3535/EM-app" target="_blank" class="project-link">VIEW →</a>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT -->
 <section>
   <div class="section-label">Contact</div>
   <h2 class="section-title">GET IN TOUCH</h2>
@@ -337,7 +485,7 @@ Implemented CI/CD pipeline enabling automated deployments and consistent environ
 
   <div class="contact-item">
     Email:
-    <a href="mailto:nikhilhntr@gmail.com" style="color: white; text-decoration: none;">
+    <a href="mailto:nikhilhntr@gmail.com">
       nikhilhntr@gmail.com
     </a>
   </div>
